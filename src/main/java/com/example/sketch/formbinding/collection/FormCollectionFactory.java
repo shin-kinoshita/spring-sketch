@@ -1,4 +1,4 @@
-package com.example.springsketch.formbinding;
+package com.example.sketch.formbinding;
 
 import java.util.ArrayList;
 import java.util.Arrays;

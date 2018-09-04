@@ -1,4 +1,4 @@
-package com.example.springsketch.formbinding;
+package com.example.sketch.formbinding;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,16 +11,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author subaru
  */
 @Controller
-@RequestMapping("/formbinding/simple")
-public class SimpleController {
+@RequestMapping("/formbinding/collection")
+public class CollectionController {
     @GetMapping("input")
     public String input(Model model) {
+        model.addAttribute("formCollection", new FormCollectionFactory().getFormCollection());
         model.addAttribute("simpleForm", new SimpleForm());
-        return "formbinding/simple/input";
+        return "formbinding/collection/input";
     }
 
     @PostMapping("output")
     public String output(@ModelAttribute SimpleForm simpleForm) {
-        return "formbinding/simple/output";
+        return "formbinding/collection/output";
     }
 }

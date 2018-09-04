@@ -1,4 +1,4 @@
-package com.example.springsketch.formbinding;
+package com.example.sketch.formbinding;
 
 /**
  * @author subaru

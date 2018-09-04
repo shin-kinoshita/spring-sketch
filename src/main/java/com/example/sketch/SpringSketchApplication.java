@@ -1,4 +1,4 @@
-package com.example.springsketch;
+package com.example.sketch;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringSketchApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringSketchApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringSketchApplication.class, args);
+    }
 }
