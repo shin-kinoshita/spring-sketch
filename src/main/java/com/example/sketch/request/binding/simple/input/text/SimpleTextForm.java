@@ -1,17 +1,17 @@
-package com.example.sketch.binding.simple.input;
+package com.example.sketch.request.binding.simple.input.text;
 
 /**
  * @author subaru
  */
-public class SimpleForm {
+public class SimpleTextForm {
     private String name;
     private String text;
 
-    public SimpleForm() {
+    public SimpleTextForm() {
 
     }
 
-    public SimpleForm(String name, String text) {
+    public SimpleTextForm(String name, String text) {
         this.name = name;
         this.text = text;
     }
