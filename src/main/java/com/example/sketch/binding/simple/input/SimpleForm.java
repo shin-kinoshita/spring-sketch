@@ -1,4 +1,4 @@
-package com.example.sketch.formbinding;
+package com.example.sketch.binding.simple.input;
 
 /**
  * @author subaru
