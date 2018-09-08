@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Input page</h1>
-<form action="/binding/simple/output" method="post" th:object="${simpleForm}">
+<form action="/binding/simple/text/output" method="post" th:object="${simpleTextForm}">
   <p>name</p>
   <input type="text" th:field="*{name}"/>
   <p>text</p>
@@ -14,11 +14,14 @@
   <br/>
   <input type="submit" value="submit"/>
 </form>
+</body>
+</html>
+
 <!--/*
 th:field を使用しないなら以下で書き換え可。
 
 pattern 1
-<form action="/formbinding/simple.input/output" method="post" th:object="${simpleForm}">
+<form action="/binding/simple/input/output" method="post" th:object="${simpleTextForm}">
   <p>name</p>
   <input type="text" name="name" th:value="*{name}"/>
   <p>text</p>
@@ -28,14 +31,12 @@ pattern 1
 </form>
 
 pattern 2
-<form action="/formbinding/simple.input/output" method="post">
+<form action="/binding/simple/input/output" method="post">
   <p>name</p>
-  <input type="text" name="name" th:value="${simpleForm.name}"/>
+  <input type="text" name="name" th:value="${simpleTextForm.name}"/>
   <p>text</p>
-  <input type="text" name="test" th:value="${simpleForm.text}"/>
+  <input type="text" name="test" th:value="${simpleTextForm.text}"/>
   <br/>
   <input type="submit" value="submit"/>
 </form>
 */-->
-</body>
-</html>
