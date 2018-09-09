@@ -1,4 +1,4 @@
-package com.example.sketch.request.binding.simple.text;
+package com.example.sketch.request.binding.simple.input.text;
 
 /**
  * @author subaru
