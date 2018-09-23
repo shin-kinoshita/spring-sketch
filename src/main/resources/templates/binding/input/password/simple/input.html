@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Input Page</title>
+</head>
+<body>
+<h1>Input page</h1>
+<form action="/binding/input/password/simple" method="post" th:object="${passwordSimpleForm}">
+  <p>name</p>
+  <input type="text" th:field="*{name}"/>
+  <p>password</p>
+  <ul th:if="${#fields.hasErrors('password')}">
+    <li th:each="e : ${#fields.detailedErrors('password')}" th:text="${e.message}" style="color: red;"></li>
+  </ul>
+  <input type="password" th:field="*{password}" value="password"/>
+  <br/>
+  <input type="submit" value="submit"/>
+</form>
+</body>
+</html>
