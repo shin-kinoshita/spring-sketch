@@ -1,11 +1,11 @@
-package com.example.sketch.request.binding.input.password.simple;
+package com.example.sketch.request.binding.input.password;
 
 import javax.validation.constraints.Size;
 
 /**
  * @author subaru
  */
-public class PasswordSimpleForm {
+public class PasswordForm {
     private String name;
 
     @Size(min = 8, max = 16)

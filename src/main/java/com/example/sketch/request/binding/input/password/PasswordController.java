@@ -1,4 +1,4 @@
-package com.example.sketch.request.binding.input.password.simple;
+package com.example.sketch.request.binding.input.password;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,19 +13,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author subaru
  */
 @Controller
-@RequestMapping("/binding/input/password/simple")
-public class PasswordSimpleController {
+@RequestMapping("/binding/input/password")
+public class PasswordController {
     @GetMapping
     public String input(Model model) {
-        model.addAttribute("passwordSimpleForm", new PasswordSimpleForm());
-        return "binding/input/password/simple/input";
+        model.addAttribute("passwordForm", new PasswordForm());
+        return "binding/input/password/input";
     }
 
     @PostMapping
-    public String output(@Validated @ModelAttribute PasswordSimpleForm passwordSimpleForm, BindingResult br) {
+    public String output(@Validated @ModelAttribute PasswordForm passwordForm, BindingResult br) {
         if (br.hasErrors()) {
-            return "binding/input/password/simple/input";
+            return "binding/input/password/input";
         }
-        return "binding/input/password/simple/output";
+        return "binding/input/password/output";
     }
 }

@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Input page</h1>
-<form action="/binding/input/password/simple" method="post" th:object="${passwordSimpleForm}">
+<form action="/binding/input/password" method="post" th:object="${passwordForm}">
   <p>name</p>
   <input type="text" th:field="*{name}"/>
   <p>password</p>

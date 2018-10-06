@@ -1,4 +1,4 @@
-package com.example.sketch.request.binding.input.text.simple;
+package com.example.sketch.request.binding.input.text;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author subaru
  */
 @Controller
-@RequestMapping("/binding/input/text/simple")
-public class TextSimpleController {
+@RequestMapping("/binding/input/text")
+public class TextController {
     @GetMapping
     public String input(Model model) {
-        model.addAttribute("textSimpleForm", new TextSimpleForm());
-        return "binding/input/text/simple/input";
+        model.addAttribute("textForm", new TextForm());
+        return "binding/input/text/input";
     }
 
     @PostMapping
-    public String output(@ModelAttribute TextSimpleForm textSimpleForm) {
-        return "binding/input/text/simple/output";
+    public String output(@ModelAttribute TextForm textForm) {
+        return "binding/input/text/output";
     }
 }
