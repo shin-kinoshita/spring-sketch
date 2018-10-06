@@ -5,8 +5,8 @@
   <title>Input Page</title>
 </head>
 <body>
-<h1>Input page</h1>
-<form action="/binding/input/text/simple" method="post" th:object="${textSimpleForm}">
+<h1>Input Page</h1>
+<form action="/binding/input/text" method="post" th:object="${textForm}">
   <p>name</p>
   <input type="text" th:field="*{name}"/>
   <p>text</p>
@@ -21,7 +21,7 @@
 th:field を使用しないなら以下で書き換え可。
 
 pattern 1
-<form action="/binding/input/text/simple" method="post" th:object="${textSimpleForm}">
+<form action="/binding/input/text" method="post" th:object="${textForm}">
   <p>name</p>
   <input type="text" name="name" th:value="*{name}"/>
   <p>text</p>
@@ -31,11 +31,11 @@ pattern 1
 </form>
 
 pattern 2
-<form action="/binding/input/text/simple" method="post">
+<form action="/binding/input/text" method="post">
   <p>name</p>
-  <input type="text" name="name" th:value="${textSimpleForm.name}"/>
+  <input type="text" name="name" th:value="${textForm.name}"/>
   <p>text</p>
-  <input type="text" name="test" th:value="${textSimpleForm.text}"/>
+  <input type="text" name="test" th:value="${textForm.text}"/>
   <br/>
   <input type="submit" value="submit"/>
 </form>
@@ -45,7 +45,7 @@ pattern 2
 レンダリング結果は全く同じものとなる。
 id 属性も全く同じものになるので注意。
 
-<form action="/binding/input/text/simple" method="post" th:object="${textSimpleForm}">
+<form action="/binding/input/text" method="post" th:object="${textForm}">
   <p>text</p>
   <input type="text" th:field="*{text}"/>
   <p>text</p>
