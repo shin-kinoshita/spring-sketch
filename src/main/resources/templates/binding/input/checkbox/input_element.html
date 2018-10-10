@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Input Page</title>
+</head>
+<body>
+<h1>Input page</h1>
+<form action="/binding/input/checkbox/element" method="post" th:object="${checkboxElementForm}">
+  <p>What is your favorite fruit?</p>
+  <div>
+    <label th:for="${#ids.next('apple')}" th:text="apple"></label>
+    <input type="checkbox" th:field="*{apple}"/>
+  </div>
+  <div>
+    <label th:for="${#ids.next('banana')}" th:text="banana"></label>
+    <input type="checkbox" th:field="*{banana}"/>
+  </div>
+  <div>
+    <label th:for="${#ids.next('mango')}" th:text="mango"></label>
+    <input type="checkbox" th:field="*{mango}"/>
+  </div>
+  <input type="submit" value="submit"/>
+</form>
+</body>
+</html>
+
+<!--/* TODO 複数同じ th:field 属性値を持つ type=checkbox の input タグが存在する場合
+レンダリング結果は id 属性値のみそれぞれ一意なものとなる。
+id 属性も全く同じものになるので注意。
+
+<form action="/binding/input/checkbox/element" method="post" th:object="${checkboxElementForm}">
+  <label for="banana" th:text="banana"></label>
+  <input type="checkbox" th:field="*{banana}"/>
+  <label for="banana" th:text="banana"></label>
+  <input type="checkbox" th:field="*{banana}"/>
+</form>
+
+レンダリング結果の id 属性値は上から順に
+* id="banana1"
+* id="banana2"
+となる。
+*/-->
+
+<!--/* TODO th:field を使用せずに hidden のタグを出力しない時の実装
+<h1>Input page</h1>
+<form action="/binding/input/checkbox/element" method="post" th:object="${checkboxElementForm}">
+  <p>What is your favorite fruit?</p>
+  <div>
+    <label th:for="${#ids.next('apple')}" th:text="apple"></label>
+    <input type="checkbox" id="apple" name="apple" value="true" th:checked="*{apple}"/>
+  </div>
+  <div>
+    <label th:for="${#ids.next('banana')}" th:text="banana"></label>
+    <input type="checkbox" id="banana" name="banana" value="true" th:checked="*{banana}"/>
+  </div>
+  <div>
+    <label th:for="${#ids.next('mango')}" th:text="mango"></label>
+    <input type="checkbox" id="mango" name="mango" value="true" th:checked="*{mango}"/>
+  </div>
+  <input type="submit" value="submit"/>
+</form>
+*/-->

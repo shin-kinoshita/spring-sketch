@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Output Page</title>
+</head>
+<body>
+<h1>Output Page</h1>
+<p>Thank you for your submitting</p>
+<p>Your favorite food is</p>
+<ul th:object="${checkboxElementForm}">
+  <li th:if="*{apple}">apple</li>
+  <li th:if="*{banana}">banana</li>
+  <li th:if="*{mango}">mango</li>
+</ul>
+</body>
+</html>
