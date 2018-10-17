@@ -3,7 +3,6 @@ package com.example.sketch.request.binding.input.checkbox;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,7 +19,7 @@ public class CheckboxController {
     }
 
     @PostMapping("element")
-    public String outputElement(@ModelAttribute CheckboxElementForm checkboxElementForm) {
+    public String outputElement(CheckboxElementForm checkboxElementForm) {
         return "binding/input/checkbox/output_element";
     }
 
@@ -31,7 +30,18 @@ public class CheckboxController {
     }
 
     @PostMapping("category")
-    public String outputCategory(@ModelAttribute CheckboxCategoryForm checkboxCategoryForm) {
+    public String outputCategory(CheckboxCategoryForm checkboxCategoryForm) {
         return "binding/input/checkbox/output_category";
+    }
+
+    @GetMapping("enum")
+    public String inputEnum(Model model) {
+        model.addAttribute("checkboxEnumForm", new CheckboxEnumForm());
+        return "binding/input/checkbox/input_enum";
+    }
+
+    @PostMapping("enum")
+    public String outputEnum(CheckboxEnumForm checkboxEnumForm) {
+        return "binding/input/checkbox/output_enum";
     }
 }

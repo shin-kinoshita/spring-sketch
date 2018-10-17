@@ -5,7 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -22,7 +21,7 @@ public class PasswordController {
     }
 
     @PostMapping
-    public String output(@Validated @ModelAttribute PasswordForm passwordForm, BindingResult br) {
+    public String output(@Validated PasswordForm passwordForm, BindingResult br) {
         if (br.hasErrors()) {
             return "binding/input/password/input";
         }
