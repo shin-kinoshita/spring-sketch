@@ -3,7 +3,6 @@ package com.example.sketch.request.binding.input.text;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,7 +19,7 @@ public class TextController {
     }
 
     @PostMapping
-    public String output(@ModelAttribute TextForm textForm) {
+    public String output(TextForm textForm) {
         return "binding/input/text/output";
     }
 }
