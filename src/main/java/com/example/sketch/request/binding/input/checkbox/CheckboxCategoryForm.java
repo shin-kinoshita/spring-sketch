@@ -6,14 +6,14 @@ import java.util.List;
  * @author subaru
  */
 public class CheckboxCategoryForm {
-    private List<String> fruits;
-//    private List<String> fruits = Collections.singletonList("apple");
+    private List<String> favoriteFruits;
+//    private List<String> favoriteFruits = Collections.singletonList("apple");
 
-    public void setFruits(List<String> fruits) {
-        this.fruits = fruits;
+    public void setFavoriteFruits(List<String> favoriteFruits) {
+        this.favoriteFruits = favoriteFruits;
     }
 
-    public List<String> getFruits() {
-        return fruits;
+    public List<String> getFavoriteFruits() {
+        return favoriteFruits;
     }
 }

@@ -9,58 +9,40 @@
 <form action="/binding/input/checkbox/category" method="post" th:object="${checkboxCategoryForm}">
   <p>What is your favorite fruit?</p>
   <div>
-    <label th:for="${#ids.next('fruits')}" th:text="apple"></label>
-    <input type="checkbox" th:field="*{fruits}" value="apple"/>
+    <label th:for="${#ids.next('favoriteFruits')}" th:text="apple"></label>
+    <input type="checkbox" th:field="*{favoriteFruits}" value="apple"/>
   </div>
   <div>
-    <label th:for="${#ids.next('fruits')}" th:text="banana"></label>
-    <input type="checkbox" th:field="*{fruits}" value="banana"/>
+    <label th:for="${#ids.next('favoriteFruits')}" th:text="banana"></label>
+    <input type="checkbox" th:field="*{favoriteFruits}" value="banana"/>
   </div>
   <div>
-    <label th:for="${#ids.next('fruits')}" th:text="mango"></label>
-    <input type="checkbox" th:field="*{fruits}" value="mango"/>
+    <label th:for="${#ids.next('favoriteFruits')}" th:text="mango"></label>
+    <input type="checkbox" th:field="*{favoriteFruits}" value="mango"/>
   </div>
   <input type="submit" value="submit"/>
 </form>
 </body>
 </html>
 
-<!--/* TODO 複数同じ th:field 属性値を持つ type=checkbox の input タグが存在する場合
-レンダリング結果は id 属性値のみそれぞれ一意なものとなる。
-id 属性も全く同じものになるので注意。
-
-<form action="/binding/input/checkbox" method="post" th:object="${checkboxForm}">
-  <label for="banana" th:text="banana"></label>
-  <input type="checkbox" th:field="*{banana}"/>
-  <label for="banana" th:text="banana"></label>
-  <input type="checkbox" th:field="*{banana}"/>
-</form>
-
-レンダリング結果の id 属性値は上から順に
-* id="banana1"
-* id="banana2"
-となる。
-*/-->
-
-
 <!--/* TODO th:field を使用せずに hidden のタグを出力しない時の実装
 <h1>Input page</h1>
 <form action="/binding/input/checkbox/category" method="post" th:object="${checkboxCategoryForm}">
   <p>What is your favorite fruit?</p>
   <div>
-    <label th:for="${#ids.next('fruits')}" th:text="apple"></label>
-    <input type="checkbox" id="fruits1" name="fruits" value="apple"
-           th:checked="${checkboxCategoryForm.fruits.contains('apple')}"/>
+    <label th:for="${#ids.next('favoriteFruits')}" th:text="apple"></label>
+    <input type="checkbox" id="fruits1" name="favoriteFruits" value="apple"
+           th:checked="${checkboxCategoryForm.favoriteFruits.contains('apple')}"/>
   </div>
   <div>
-    <label th:for="${#ids.next('fruits')}" th:text="banana"></label>
-    <input type="checkbox" id="fruits2" name="fruits" value="banana"
-           th:checked="${checkboxCategoryForm.fruits.contains('banana')}"/>
+    <label th:for="${#ids.next('favoriteFruits')}" th:text="banana"></label>
+    <input type="checkbox" id="fruits2" name="favoriteFruits" value="banana"
+           th:checked="${checkboxCategoryForm.favoriteFruits.contains('banana')}"/>
   </div>
   <div>
-    <label th:for="${#ids.next('fruits')}" th:text="mango"></label>
-    <input type="checkbox" id="fruits3" name="fruits" value="mango"
-           th:checked="${checkboxCategoryForm.fruits.contains('mango')}"/>
+    <label th:for="${#ids.next('favoriteFruits')}" th:text="mango"></label>
+    <input type="checkbox" id="fruits3" name="favoriteFruits" value="mango"
+           th:checked="${checkboxCategoryForm.favoriteFruits.contains('mango')}"/>
   </div>
   <input type="submit" value="submit"/>
 </form>

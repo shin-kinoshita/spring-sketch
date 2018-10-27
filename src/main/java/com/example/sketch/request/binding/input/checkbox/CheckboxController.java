@@ -42,6 +42,7 @@ public class CheckboxController {
 
     @PostMapping("enum")
     public String outputEnum(CheckboxEnumForm checkboxEnumForm) {
+        new RuntimeException().printStackTrace();
         return "binding/input/checkbox/output_enum";
     }
 }
