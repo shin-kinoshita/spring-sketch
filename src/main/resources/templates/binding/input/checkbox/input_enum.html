@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Input Page</title>
+</head>
+<body>
+<h1>Input page</h1>
+<form action="/binding/input/checkbox/enum" method="post" th:object="${checkboxEnumForm}">
+  <p>What is your favorite fruit?</p>
+  <div>
+    <label th:for="${#ids.next('favoriteFruits')}" th:text="apple"></label>
+    <input type="checkbox" th:field="*{favoriteFruits}" value="apple"/>
+  </div>
+  <div>
+    <label th:for="${#ids.next('favoriteFruits')}" th:text="banana"></label>
+    <input type="checkbox" th:field="*{favoriteFruits}" value="banana"/>
+  </div>
+  <div>
+    <label th:for="${#ids.next('favoriteFruits')}" th:text="mango"></label>
+    <input type="checkbox" th:field="*{favoriteFruits}" value="mango"/>
+  </div>
+  <input type="submit" value="submit"/>
+</form>
+</body>
+</html>

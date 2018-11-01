@@ -8,7 +8,7 @@
 <h1>Output Page</h1>
 <p>Thank you for your submitting</p>
 <p>Your favorite food is</p>
-<ul th:object="${checkboxCategoryForm}">
+<ul th:object="${checkboxEnumForm}">
   <li th:each="element : *{favoriteFruits}" th:text="${element}"></li>
 </ul>
 </body>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Input Page</title>
+</head>
+<body>
+<h1>Input Page</h1>
+<form action="/binding/input/radio" method="post" th:object="${radioForm}">
+  <p>name</p>
+  <input type="text" th:field="*{name}"/>
+  <p>gender</p>
+  <input type="radio" th:field="*{gender}" value="male"/>
+  <label th:for="${#ids.prev('gender')}" th:text="male"></label>
+  <input type="radio" th:field="*{gender}" value="female"/>
+  <label th:for="${#ids.prev('gender')}" th:text="female"></label>
+  <br/>
+  <input type="submit" value="submit"/>
+</form>
+</body>
+</html>
+
+<!--/* TODO th:field と th:value を併用した時
+type属性値が text の時とは違い、併用した場合 th:value の値が優先される。
+
+<form action="/binding/input/radio" method="post" th:object="${radioForm}">
+  <p>your favorite</p>
+  <div>
+    <input type="radio" th:field="*{gender}" value="male"/>
+    <label th:for="${#ids.prev('gender')}" th:text="male"></label>
+  </div>
+  <div>
+    <input type="radio" th:field="*{gender}" value="female"/>
+    <label th:for="${#ids.prev('gender')}" th:text="female"></label>
+  </div>
+</form>
+
+よってレンダリング時の input タグの value 属性はそれぞれ
+* value="male"
+* value="female"
+となる。
+*/-->
+
